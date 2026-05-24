@@ -1,4 +1,3 @@
----
 ## Title
 Reflected Cross-Site Scripting (XSS) via Username in URL Path Segment
 
@@ -20,20 +19,11 @@ https://kzlabs.com/58.php/account/{username}/messages
 ---
 ## Steps to Reproduce
 1. Go to `https://kzlabs.com/58.php/account/unique/messages` and view the page source.
-2. Around line 382 you can see the username `unique` reflected raw inside the profile link href:
-```
-href="/account/unique/profile">
-```
-3. The source comment confirms "VULNERABLE: $username is echoed raw into this double-quoted href" and even suggests the payload to use.
-4. Since the value is injected into a double-quoted attribute with no encoding, craft the following payload to break out and inject an img tag:
-```
-unique"><img src=x onerror=alert(1)>
-```
-5. Visit the following URL directly:
+2. Visit the following URL directly:
 ```
 https://kzlabs.com/58.php/account/unique"><img src=x onerror=alert(1)>/messages
 ```
-6. The page loads and the alert box fires immediately displaying `1` confirming the payload broke out of the href attribute and executed via the onerror handler.
+3. The page loads and the alert box fires immediately displaying `1` confirming the payload broke out of the href attribute and executed via the onerror handler.
 
 ---
 ## Payload Used

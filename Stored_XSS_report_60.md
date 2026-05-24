@@ -1,5 +1,3 @@
----
-
 ## Title
 Stored Cross-Site Scripting (XSS) via Report Name Field in Network Reports
 

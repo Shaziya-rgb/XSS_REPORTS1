@@ -1,4 +1,3 @@
----
 ## Title
 Reflected Cross-Site Scripting (XSS) via Search Parameter in JavaScript Analytics Context
 
@@ -20,21 +19,11 @@ https://kzlabs.com/55.php?search=
 ---
 ## Steps to Reproduce
 1. Go to `https://kzlabs.com/55.php` and open the Help Center search.
-2. First search for a unique term like `unique1` and view the page source.
-3. In the source code around line 425 you can see the search term reflected raw inside the JavaScript analytics block:
-```
-internalSearchTerm: "unique1",
-```
-4. This confirms the search term is injected directly into a JS string with no escaping at all.
-5. Now craft the payload to break out of the string context and inject JavaScript:
-```
-unique"-alert(1)-"
-```
-6. Submit this as the search term or visit the following URL directly:
+2. Submit this as the search term or visit the following URL directly:
 ```
 https://kzlabs.com/55.php?search=unique"-alert(1)-"
 ```
-7. The page loads and a JavaScript alert box pops up displaying `1` confirming the payload broke out of the JS string and executed.
+3. The page loads and a JavaScript alert box pops up displaying `1` confirming the payload broke out of the JS string and executed.
 
 ---
 ## Payload Used

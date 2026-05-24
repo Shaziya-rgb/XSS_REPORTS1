@@ -1,4 +1,3 @@
----
 ## Title
 Stored Cross-Site Scripting (XSS) via Rich Text Editor HTML Tab in Article Body
 

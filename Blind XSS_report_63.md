@@ -1,4 +1,3 @@
----
 ## Title
 Blind Cross-Site Scripting (XSS) via Company Name Field in Registration
 

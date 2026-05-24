@@ -1,4 +1,3 @@
----
 ## Title
 Reflected Cross-Site Scripting (XSS) via Search Parameter in HTML Attribute Context
 
@@ -20,21 +19,11 @@ https://kzlabs.com/56.php?p=
 ---
 ## Steps to Reproduce
 1. Go to `https://kzlabs.com/56.php` and open the Community Hub search.
-2. First search for a unique term like `unique'">` and view the page source.
-3. In the source code around line 435 you can see the search term reflected raw inside the `data-query` attribute:
-```
-data-query='unique'">'
-```
-4. The source code comment confirms "The $p parameter is echoed directly into the data-query attribute WITHOUT htmlspecialchars" confirming the injection point.
-5. Since the attribute uses single quotes and no escaping is applied, craft the following payload to break out and inject an event handler:
-```
-unique' onmouseover='alert(1)
-```
-6. Submit this as the search term or visit the following URL directly:
+2. Submit this as the search term or visit the following URL directly:
 ```
 https://kzlabs.com/56.php?p=unique'+onmouseover%3D'alert(1)
 ```
-7. The page loads and hovering over the search results area triggers the JavaScript alert box displaying `1` confirming the payload broke out of the attribute and executed.
+3. The page loads and hovering over the search results area triggers the JavaScript alert box displaying `1` confirming the payload broke out of the attribute and executed.
 
 ---
 ## Payload Used

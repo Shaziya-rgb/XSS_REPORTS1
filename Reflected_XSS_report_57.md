@@ -1,4 +1,3 @@
----
 ## Title
 Reflected Cross-Site Scripting (XSS) via `returnTo` Parameter in Redirect URI
 
@@ -20,22 +19,11 @@ https://kzlabs.com/57.php?returnTo=
 ---
 ## Steps to Reproduce
 1. Go to `https://kzlabs.com/57.php` which simulates Shopify's account confirmation endpoint.
-2. First test with a unique term like `unique` and view the page source.
-3. In the source code around line 461 you can see the returnTo value reflected raw inside the Continue button href:
-```
-<a href="unique"><" class="btn-continue">
-```
-4. The source comment confirms "$returnTo is echoed into the href WITHOUT any validation" and also notes that `javascript:alert(document.cookie)` as returnTo will execute JS when clicked.
-5. Now craft the payload using a `javascript:` URI and inject a script tag to execute JavaScript:
-```
-unique<img width="1881" height="900" alt="Screenshot 2026-05-24 031552" src="https://github.com/user-attachments/assets/822c14f1-f784-4b21-87f4-e6ed86327a7d" />
-'"><script>alert(1)</script>
-```
-6. Visit the following URL directly:
+2. Visit the following URL directly:
 ```
 https://kzlabs.com/57.php?returnTo=unique%27"><script>alert(1)</script>
 ```
-7. The page loads and a JavaScript alert box pops up immediately displaying `1` confirming the payload broke out of the href attribute and executed.
+3. The page loads and a JavaScript alert box pops up immediately displaying `1` confirming the payload broke out of the href attribute and executed.
 
 ---
 ## Payload Used

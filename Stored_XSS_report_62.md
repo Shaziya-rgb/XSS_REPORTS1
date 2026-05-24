@@ -1,4 +1,3 @@
----
 ## Title
 Stored Cross-Site Scripting (XSS) via Profile Signature Field in Forum
 

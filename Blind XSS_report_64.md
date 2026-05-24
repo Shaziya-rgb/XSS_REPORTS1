@@ -1,4 +1,3 @@
----
 ## Title
 Blind Cross-Site Scripting (XSS) via Support Ticket Form
 

